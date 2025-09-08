@@ -107,3 +107,11 @@
         Det' derfor vi hejser et flaaaaaaag!_
     ]
 ]
+
+#pagebreak()
+
+#include "sange/enkortenlang.typ"
+
+#pagebreak()
+
+#include "sange/danskernessaneglæde.typ"
