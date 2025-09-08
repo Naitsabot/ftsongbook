@@ -15,11 +15,30 @@
 
 
 #let songbook(
-  title: "Songbook",
-  author: none,
-  date: none,
+  title: "F-Klubbens Sangbog",
+  description: "F-Klubbens Fabelagtige Sangbog",
+  authors: (
+    (name: "BoAnd"),
+    (name: "Simlau"),
+    (name: "AI"),
+    (name: "Jesus"),
+    (name: "For-mændene"),
+  ),
+  date: datetime.today(),
   body,
+  localisation: (
+    lang: "dk",
+    region: "dk",
+  ),
 ) = {
+  set document(
+    title: title,
+    description: description,
+    author: authors.map(a => a.name),
+    keywords: "Boobies",
+    date: date,
+  )
+
   // Setop af sider
   set page(
     paper: "a5",
@@ -60,6 +79,8 @@
   body
 }
 
+#counter("song").update(0)
+
 // https://github.com/typst/typst/issues/466
 #let balanced-cols(cols: 2, content) = style(styles => {
   let h = measure(content, styles).height / cols
@@ -80,6 +101,18 @@
       columns(cols, gutter: gutter, content),
     )
   ])
+}
+
+#let format-authors(authors) = {
+  let names = authors.map(a => a.name)
+  if names.len() == 1 {
+    names.first()
+  } else if names.len() == 2 {
+    names.at(0) + " and " + names.at(1)
+  } else {
+    let all-but-last = names.slice(0, -1).join(", ")
+    all-but-last + " and " + names.last()
+  }
 }
 
 
@@ -174,3 +207,109 @@
     ],
   )
 }
+
+#let forside = page[
+  #align(center)[
+    #v(1cm)
+    //#text(size: 2.5em, weight: "regular")[#smallcaps[#meta.title]]
+    #text(size: 2.5em, weight: "regular")[#smallcaps[F-Klubben Sangbog]]
+    #v(0.4cm)
+    //#text(size: 14pt)[#meta.description]
+    //#v(3em)
+    /* #text(size: 1em, weight: "regular")[
+      Made by #format-authors(meta.authors) - #meta.date.year()
+    ] */
+    #text(size: 1em, weight: "regular")[
+      Made by meeeeee
+    ]
+    #v(1.5cm)
+    #image("assets/fklubben.svg", width: 70%)
+  ]
+]
+
+#let forord = page()[
+  \#fritfit\
+  \#fritfor
+]
+
+#let indholdfortegnelse = page({
+  heading(level: 1, numbering: none, outlined: false)[Indholdsfortegnelse]
+
+  v(0.5cm)
+  set text(.9em)
+  set par(leading: 0.25em)
+
+  columns(3, gutter: 0.5cm, {
+    context {
+      let chapters = query(
+        heading.where(
+          level: 1,
+          outlined: true,
+        ),
+      ).sorted(key: chapter => {
+        lower(repr(chapter.body))
+      }) //TODO: sort song counter instead or something
+
+      // First, group all chapters by their starting character
+      let groups = (:)
+
+      for chapter in chapters {
+        // Get the string representation and extract content
+        let chapter_repr = repr(chapter.body)
+        let actual_content = ""
+        if chapter_repr.starts-with("[") and chapter_repr.ends-with("]") {
+          actual_content = chapter_repr.slice(1, -1)
+        } else {
+          actual_content = chapter_repr
+        }
+
+        let chapter_text = lower(actual_content)
+
+        // Determine group
+        let group_key = "non-letter" // Default
+        if chapter_text.len() > 0 {
+          let first_char = chapter_text.first()
+          if first_char >= "a" and first_char <= "z" {
+            group_key = first_char
+          }
+        }
+
+        // Add to groups
+        if group_key in groups {
+          groups.at(group_key).push(chapter)
+        } else {
+          groups.insert(group_key, (chapter,))
+        }
+      }
+
+      // Sort group keys so non-letter comes first, then alphabetical
+      let group_keys = groups
+        .keys()
+        .sorted(key: key => {
+          if key == "non-letter" { "0" } else { key }
+        })
+
+      // Now print each group
+      let first_group = true
+      for group_key in group_keys {
+        // Add spacing between groups (except before first group)
+        if not first_group {
+          v(0.1em)
+        }
+        first_group = false
+
+        // Print all chapters in this group
+        for chapter in groups.at(group_key) {
+          let loc = chapter.location()
+          let nr = counter(heading).at(loc).first() - 1 // offset by 1 for 0-indexing
+          link(
+            loc,
+            [ #chapter.body, #nr \ ],
+          )
+        }
+      }
+    }
+  })
+})
+
+#let kapitelside = {}

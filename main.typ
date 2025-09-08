@@ -4,6 +4,12 @@
     title: "F-Klubbens Fabelagtige Sangbog"
 )
 
+#forside
+
+#forord
+
+#indholdfortegnelse
+
 #sang("Søren Banjomus", subtext: "Melodi - Lige ud af landevejen", cols: 2)[
     #vers[
         _Skillemadinkadinkadu, skillemadinkadu \
