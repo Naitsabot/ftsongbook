@@ -180,10 +180,11 @@
   table(
     rows: 1,
     columns: (1em, auto),
-    row-gutter: 0em,
-    column-gutter: 0em,
+    row-gutter: 0.5em,
+    column-gutter: 0.5em,
     stroke: none,
     inset: 0em,
+    align: (right, left),
     [#text(
       font: config.song-text-font,
       size: config.song-text-size,
@@ -204,9 +205,8 @@
   table(
     rows: 2,
     columns: (1em, auto),
-    row-gutter: 0.5em,
-    //0.325em 0.65em
-    column-gutter: 0em,
+    row-gutter: 0.5em, //0.325em 0.65em
+    column-gutter: 0.5em,
     stroke: none,
     inset: 0em,
     table.cell(colspan: 2)[#text(

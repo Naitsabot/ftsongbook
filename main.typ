@@ -4,7 +4,11 @@
     title: "F-Klubbens Fabelagtige Sangbog"
 )
 
-#include "sange/drunkenboand.typ"
+#include "sange/dumåfåminccompilernårjegdør.typ"
+
+#pagebreak()
+
+#include "sange/flagsang.typ"
 
 /* #forside
 
@@ -16,7 +20,6 @@
 
 #kapitelside(titel: "F-Klub Sange")
 
-#include "sange/flagsang.typ"
 
 #pagebreak()
 
