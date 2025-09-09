@@ -4,13 +4,7 @@
     title: "F-Klubbens Fabelagtige Sangbog"
 )
 
-#include "sange/unsorted/dervarenskikkeligbondemand.typ"
-
-#pagebreak()
-
-#include "sange/unsorted/derernogetgaltidanmark.typ"
-
-#include "sange/unsorted/denrødetråd.typ"
+#include "sange/drunkenboand.typ"
 
 /* #forside
 

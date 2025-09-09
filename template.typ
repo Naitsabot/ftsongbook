@@ -128,7 +128,7 @@
       ),
     )
     #block(
-      height: height / cols,
+      height: height / cols + 1em, // cursed 1em
       columns(cols, gutter: gutter, content),
     )
   ])
@@ -155,10 +155,18 @@
     [
       #if cols > 1 [
         #eqcolumns(cols, gutter: 1em)[
-          #text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[#body]
+          #text(
+            font: config.song-text-font,
+            size: config.song-text-size,
+            weight: config.song-text-weight,
+          )[#body]
         ]
       ] else [
-        #text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[#body]
+        #text(
+          font: config.song-text-font,
+          size: config.song-text-size,
+          weight: config.song-text-weight,
+        )[#body]
       ]
     ],
   )
@@ -174,7 +182,7 @@
     columns: (1em, auto),
     row-gutter: 0em,
     column-gutter: 0em,
-    stroke: red,
+    stroke: none,
     inset: 0em,
     [#text(
       font: config.song-text-font,
@@ -182,26 +190,12 @@
       weight: config.song-text-weight,
     )[#context counter("verse").display().]],
     [#text(
-      font: config.song-text-font, 
-      size: config.song-text-size, 
-      weight: config.song-text-weight
-    )[#body]],
-  )
-  v(0em)
-  /* grid(
-    columns: (auto, 1fr),
-    column-gutter: 0.5em,
-    align: (top, left),
-    text(
       font: config.song-text-font,
       size: config.song-text-size,
       weight: config.song-text-weight,
-    )[#context counter("verse").display().],
-    block(breakable: true)[
-      #set par(leading: 0.65em)
-      #text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[#body]
-    ],
-  ) */
+    )[#body]],
+  )
+  v(0em)
 }
 
 // Funktion for omkvæd
@@ -210,7 +204,8 @@
   table(
     rows: 2,
     columns: (1em, auto),
-    row-gutter: 0.5em, //0.325em 0.65em 
+    row-gutter: 0.5em,
+    //0.325em 0.65em
     column-gutter: 0em,
     stroke: none,
     inset: 0em,
@@ -220,7 +215,11 @@
       weight: config.song-text-weight,
     )[Omkvæd:]],
     [],
-    [#text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[#body]],
+    [#text(
+      font: config.song-text-font,
+      size: config.song-text-size,
+      weight: config.song-text-weight,
+    )[#body]],
   )
 }
 
