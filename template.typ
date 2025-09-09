@@ -11,6 +11,7 @@
   song-title-size: 14pt,
   subtext-text-size: 9pt,
   song-text-size: 8pt,
+  indhold-entry-size: 9pt,
   // Weight
   main-text-weight: "regular",
   song-title-weight: "bold",
@@ -87,6 +88,15 @@
     justify: true,
     leading: 0.65em,
   )
+
+  show link: it => {
+    text(
+      font: config.main-font,
+      size: config.indhold-entry-size,
+      weight: config.main-text-weight, 
+      it
+    )
+  }
 
   /* set heading(numbering: (..nums) => {
     let level = nums.pos().len()
@@ -257,17 +267,15 @@
 ]
 
 #let forord = page()[
-  #set text(font: config.main-font, size: config.main-text-size, weight: config.main-text-weight)
   \#fritfit\
   \#fritfor
 ]
 
 #let meme_page_spacer = page()[
-  #set text(font: config.main-font, size: config.main-text-size, weight: config.main-text-weight)
   *error*: unknown function `undefinedcontrolsequence`
 ]
 
-#let indholdfortegnelse = page({
+#let indholdfortegnelse(cols: 3) = page({
   heading(level: 1, numbering: none, outlined: false, text(
     font: config.song-title-font,
     size: config.song-title-size,
@@ -275,10 +283,9 @@
   )[Indholdsfortegnelse])
 
   v(0.5cm)
-  set text(font: config.main-font, size: config.main-text-size, weight: config.main-text-weight)
   set par(leading: 0.25em)
 
-  columns(3, gutter: 0.5cm, {
+  columns(cols, gutter: 0.5cm, {
     context {
       let chapters = query(
         heading.where(
@@ -343,7 +350,7 @@
           let page = loc.page()
           link(
             loc,
-            [ #chapter.body \ #page ],
+            [ #chapter.body #page ],
           )
         }
       }

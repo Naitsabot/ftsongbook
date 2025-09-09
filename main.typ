@@ -8,7 +8,7 @@
 
 #forord
 
-#indholdfortegnelse
+#indholdfortegnelse(cols: 2)
 
 #meme_page_spacer
 
