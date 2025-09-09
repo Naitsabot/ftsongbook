@@ -93,8 +93,8 @@
     text(
       font: config.main-font,
       size: config.indhold-entry-size,
-      weight: config.main-text-weight, 
-      it
+      weight: config.main-text-weight,
+      it,
     )
   }
 
@@ -169,18 +169,26 @@
 #let vers(body) = {
   counter("verse").step()
   v(0em)
-  /* table(
-    rows: 2, 
+  table(
+    rows: 1,
     columns: (1em, auto),
     row-gutter: 0em,
     column-gutter: 0em,
-    stroke: none,
+    stroke: red,
     inset: 0em,
-    table.cell(rowspan: 2)[#text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[#context counter("verse").display().]],
-    [],
-    [#text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[#body]]
-  ) */
-  grid(
+    [#text(
+      font: config.song-text-font,
+      size: config.song-text-size,
+      weight: config.song-text-weight,
+    )[#context counter("verse").display().]],
+    [#text(
+      font: config.song-text-font, 
+      size: config.song-text-size, 
+      weight: config.song-text-weight
+    )[#body]],
+  )
+  v(0em)
+  /* grid(
     columns: (auto, 1fr),
     column-gutter: 0.5em,
     align: (top, left),
@@ -188,37 +196,32 @@
       font: config.song-text-font,
       size: config.song-text-size,
       weight: config.song-text-weight,
-    )[],
+    )[#context counter("verse").display().],
     block(breakable: true)[
       #set par(leading: 0.65em)
       #text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[#body]
     ],
-  )
+  ) */
 }
 
 // Funktion for omkvæd
 #let omkvæd(body) = {
   v(0em)
   table(
-    rows: 2, 
+    rows: 2,
     columns: (1em, auto),
-    row-gutter: 0.65em,
+    row-gutter: 0.5em, //0.325em 0.65em 
     column-gutter: 0em,
     stroke: none,
     inset: 0em,
-    table.cell(colspan: 2)[#text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[Omkvæd:]],
+    table.cell(colspan: 2)[#text(
+      font: config.song-text-font,
+      size: config.song-text-size,
+      weight: config.song-text-weight,
+    )[Omkvæd:]],
     [],
-    [#text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[#body]]
+    [#text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[#body]],
   )
-  /* block(breakable: false)[
-    #text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[Omkvæd:]
-    #v(-0.65em)
-    #pad(left: 1em)[
-      #block(breakable: true)[
-        #set par(leading: 0.65em)
-        #text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[#body]
-      ]
-    ]] */
 }
 
 // Funktion for sang (basically bare en block med en header)
