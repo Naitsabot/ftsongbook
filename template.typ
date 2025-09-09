@@ -2,24 +2,21 @@
 
 #let config = (
     // Font
-    main-font: "Times New Roman",
-    song-title-font: "Source Sans 3",
-    subtext-font: "Times New Roman",
-    song-text-font: "Times New Roman",
+    main-font: "Source Serif 4", 
+    song-title-font: "Source Sans 3", 
+    subtext-font: "Source Serif 4", 
+    song-text-font: "Source Serif 4", 
     // Size
-    main-text-size: 10pt,
-    song-title-size: 14pt,
-    subtext-text-size: 10pt,
-    song-text-size: 8pt,
+    main-text-size: 10pt, 
+    song-title-size: 14pt, 
+    subtext-text-size: 9pt, 
+    song-text-size: 8pt, 
     // Weight
     main-text-weight: "regular",
     song-title-weight: "bold",
     subtext-text-weight: "regular",
-    song-text-weight: "regular",
-)
-
-
-#let songbook(
+    song-text-weight: "medium",
+    // Document
     title: "F-Klubbens Sangbog",
     description: "F-Klubbens Fabelagtige Sangbog",
     authors: (
@@ -30,11 +27,20 @@
         (name: "For-mændene"),
     ),
     date: datetime.today(),
-    body,
     localisation: (
         lang: "dk",
         region: "dk",
     ),
+)
+
+
+#let songbook(
+    title: config.title,
+    description: config.description,
+    authors: config.authors,
+    date: config.date,
+    localisation: config.localisation,
+    body,
 ) = {
     set document(
         title: title,
@@ -159,14 +165,15 @@
 // Funktion for omkvæd
 #let omkvæd(body) = {
     v(0em)
-    text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[Omkvæd:]
-    v(-0.65em)
-    pad(left: 1em)[
+    block(breakable: false)[
+    #text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[Omkvæd:]
+    #v(-0.65em)
+    #pad(left: 1em)[
         #block(breakable: true)[
             #set par(leading: 0.65em)
             #text(font: config.song-text-font, size: config.song-text-size, weight: config.song-text-weight)[#body]
         ]
-    ]
+    ]]
 }
 
 // Funktion for sang (basically bare en block med en header)
@@ -215,27 +222,30 @@
 }
 
 #let forside = page[
-    #align(center)[
-        #v(1cm)
-        //#text(size: 2.5em, weight: "regular")[#smallcaps[#meta.title]]
-        #text(size: 2.5em, weight: "regular")[#smallcaps[F-Klubben Sangbog]]
-        #v(0.4cm)
-        //#text(size: 14pt)[#meta.description]
-        //#v(3em)
-        /* #text(size: 1em, weight: "regular")[
-            Made by #format-authors(meta.authors) - #meta.date.year()
-        ] */
-        #text(size: 1em, weight: "regular")[
-            Made by meeeeee
-        ]
-        #v(1.5cm)
-        #image("assets/fklubben.svg", width: 70%)
-    ]
+  #set text(font: config.main-font, size: config.main-text-size, weight: config.main-text-weight)
+  #align(center)[
+      #v(1cm)
+      #text(size: 2.5em, weight: "regular")[#smallcaps[#config.title]]
+      #v(0.4cm)
+      //#text(size: 14pt)[#config.description]
+      //#v(3em)
+      #text(size: 1em, weight: "regular")[
+          Made by #format-authors(config.authors) - #config.date.year()
+      ]
+      #v(1.5cm)
+      #image("assets/fklubben.svg", width: 70%)
+  ]
 ]
 
-#let forord = page()[
+#let forord = page()[ 
+  #set text(font: config.main-font, size: config.main-text-size, weight: config.main-text-weight)
     \#fritfit\
     \#fritfor
+]
+
+#let meme_page_spacer = page()[ 
+  #set text(font: config.main-font, size: config.main-text-size, weight: config.main-text-weight)
+    *error*: unknown function `undefinedcontrolsequence`
 ]
 
 #let indholdfortegnelse = page({
@@ -318,4 +328,14 @@
     })
 })
 
-#let kapitelside = {}
+#let kapitelside(titel: none, asset: "assets/fklubben.svg", spacing: 2cm) = page[
+  #set text(font: config.main-font, size: config.main-text-size, weight: config.main-text-weight)
+  #align(center)[
+      #v(1cm)
+      #text(size: 2.5em, weight: "regular")[#smallcaps[#titel]]
+      #v(spacing)
+      #if asset != none [
+        #image(asset, width: 70%)
+      ]
+  ]
+]
