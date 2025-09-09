@@ -340,10 +340,10 @@
         // Print all chapters in this group
         for chapter in groups.at(group_key) {
           let loc = chapter.location()
-          let nr = counter(heading).at(loc).first() /* - 1 */ // offset by 1 for 0-indexing
+          let page = loc.page()
           link(
             loc,
-            [ #chapter.body, #nr \ ],
+            [ #chapter.body \ #page ],
           )
         }
       }
