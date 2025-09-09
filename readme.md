@@ -1,0 +1,1 @@
+`typst watch --font-path fonts --ignore-system-fonts main.typ`
