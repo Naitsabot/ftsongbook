@@ -4,7 +4,15 @@
     title: "F-Klubbens Fabelagtige Sangbog"
 )
 
-#forside
+#include "sange/unsorted/dervarenskikkeligbondemand.typ"
+
+#pagebreak()
+
+#include "sange/unsorted/derernogetgaltidanmark.typ"
+
+#include "sange/unsorted/denrødetråd.typ"
+
+/* #forside
 
 #forord
 
@@ -18,6 +26,9 @@
 
 #pagebreak()
 
+
+#pagebreak()
+
 //#include "sange/enkortenlang.typ"
 
 #pagebreak()
@@ -26,4 +37,4 @@
 
 #pagebreak()
 
-#include "sange/julesange/sørenbanjomus.typ"
+#include "sange/julesange/sørenbanjomus.typ" */
