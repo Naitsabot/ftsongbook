@@ -1,1 +1,69 @@
 `typst watch --font-path fonts --ignore-system-fonts main.typ`
+
+typst 0.13.1
+
+OG rækkefølge:
+
+- F-Klub Sange
+  - en målrettet vise
+  - en meget nostalgisk vise
+  - RUDIN billede
+  - Introduktionsvise
+  - Masser af CC
+  - en kort en lang
+  - Livet
+  - du må få min c compiler
+  - Danskernes sange glæde
+  - den lilel grønne frø
+  - hvem sidder foran skærmen
+  - vi er ikek humanister (tågekammeret lol)
+  - regnsangen
+  - dat62(1/2)/80slagsang
+  - ma'matik
+  - Jeg er en nørd
+  - Fytteturssangen
+  - På Cassiopeia til FooBart
+  - Fit er frit
+  - Flagsangen
+  - CLRS
+- Lejerbålssange (lejerbålsbillede)
+  - costa del sol
+  - i en lille båd der gynder
+  - til ungdommen
+  - whiskey in the jar
+  - svantes lykkelige dag
+  - den røde tråd
+  - Der er noget galt i Danamrk
+  - Meyers vise
+  - Hjemmebrænderiet
+  - (samme side, calvin comic)
+  - Hvalborg
+  - Joanna
+  - Vi har lejerbål her
+  - Se venedig og dø
+- Festsange (Dream big bilelde)
+  - Skull bilelde - alle sømænd er glade for piger
+  - Bright sdide of life
+  - Der var en skikkelig bondemand (bilelde med mand og hest på samme side)
+  - Himmelhunden
+  - Drunken sailor (med xkcd comic)
+  - McArne
+  - Imagine
+  - Bubbibjørn
+  - Puff den magiske drage
+  - Buster
+  - Der er et ølrigt land
+  - Drunken boand
+  - boand
+- Julesange
+  - Søren Banjomus
+  - et barn er født i bethlehem
+  - Julemad og drikke - dur ej for nissen
+  - Jingle bell rock
+  - let it snow
+  - på loftet sidder nissen
+  - Santa claus is coming to town
+  - Til Julebal i nisseland
+- Grå sange (sex billede)
+  - en mand faldt ned fra første sal
+  - lille prinsesse
