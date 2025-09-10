@@ -1,0 +1,5 @@
+*.otf linguist-vendored
+*.ttf linguist-vendored
+*.woff linguist-vendored
+*.woff2 linguist-vendored
+fonts/* linguist-vendored
