@@ -16,7 +16,7 @@
     På alle veje strømmer den glade femberflok. \
     Jeg tror, at jeg drømmer \
     Nej det er rigtigt nok. \
-    I år skal vi til fytte-fytte-fytte-fytte-fyttetur, \
+    I år skal vi til fytte-#small[#small[fytte]]-#small[#small[fytte]]-#small[#small[fytte]]-fyttetur, \
     Det' på tide at holde femberkur.
   ]
 
@@ -56,7 +56,7 @@
     På fytteturen fået \
     Til næste oktober \
     Tar' jeg af sted igen \
-    På fyttetur, på fytte-fytte-fytte-fytte-fyttetur. \
+    På fyttetur, på fytte-#small[#small[fytte]]-#small[#small[fytte]]-#small[#small[fytte]]-fyttetur. \
     Det' på tide at holde femberkur.
   ]
 ]

@@ -5,12 +5,12 @@
   main-font: "Source Serif 4",
   song-title-font: "Source Sans 3",
   subtext-font: "Source Serif 4",
-  song-text-font: "Source Serif 4",
+  song-text-font: "Source Serif 4", //"Times New Roman",
   // Size
   main-text-size: 10pt,
   song-title-size: 14pt,
   subtext-text-size: 9pt,
-  song-text-size: 7.5pt,
+  song-text-size: 8pt,
   indhold-entry-size: 9pt,
   // Weight
   main-text-weight: "regular",
@@ -89,6 +89,7 @@
   set par(
     justify: false,
     leading: 0.65em,
+    //hanging-indent: 1.5em
   )
 
   show link: it => {
