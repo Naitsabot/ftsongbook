@@ -4,6 +4,11 @@
     title: "F-Klubbens Fabelagtige Sangbog"
 )
 
+
+#include "sange/fytteturssangen.typ"
+
+#pagebreak()
+
 #include "sange/målrettetvise.typ"
 
 #pagebreak()

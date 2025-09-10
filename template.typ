@@ -10,7 +10,7 @@
   main-text-size: 10pt,
   song-title-size: 14pt,
   subtext-text-size: 9pt,
-  song-text-size: 8pt,
+  song-text-size: 7.5pt,
   indhold-entry-size: 9pt,
   // Weight
   main-text-weight: "regular",
@@ -87,7 +87,7 @@
 
   // Mellemrum mellem paragraffer
   set par(
-    justify: true,
+    justify: false,
     leading: 0.65em,
   )
 
@@ -121,7 +121,7 @@
 })
 
 // https://github.com/typst/typst/issues/466
-#let eqcolumns(cols, gutter: 4%, content) = {
+#let eqcolumns(cols, gutter: 2%, content) = {
   layout(size => [
     #let (height,) = measure(
       block(
@@ -181,12 +181,12 @@
   v(0em)
   table(
     rows: 1,
-    columns: (1em, auto),
+    columns: (0.75em, auto),
     row-gutter: 0.5em,
     column-gutter: 0.5em,
     stroke: none,
     inset: 0em,
-    align: (right, left),
+    align: (left, left),
     [#text(
       font: config.song-text-font,
       size: config.song-text-size,
@@ -206,7 +206,7 @@
   v(0em)
   table(
     rows: 2,
-    columns: (1em, auto),
+    columns: (0.75em, auto),
     row-gutter: 0.5em, //0.325em 0.65em
     column-gutter: 0.5em,
     stroke: none,
