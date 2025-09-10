@@ -4,6 +4,14 @@
     title: "F-Klubbens Fabelagtige Sangbog"
 )
 
+#include "sange/målrettetvise.typ"
+
+#pagebreak()
+
+#include "sange/enmegetnostalgiskvise.typ"
+
+#pagebreak()
+
 #include "sange/dumåfåminccompilernårjegdør.typ"
 
 #pagebreak()

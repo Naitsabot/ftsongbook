@@ -83,6 +83,8 @@
     lang: "dk",
   )
 
+  show raw: set text(font: "Courier New")
+
   // Mellemrum mellem paragraffer
   set par(
     justify: true,
@@ -393,3 +395,21 @@
     ]
   ]
 ]
+
+
+
+/* 
+ * Værktøjer!!!
+ */
+
+// Huttles favoritter
+
+// style: "oblique" laver bare fallback til itallic, and we dont want that
+#let sl(content) = skew(ax: -12deg, reflow: true)[#content]
+#let bf(content) = text(weight: "bold")[#content]
+// emulere latex sf effekt fra latex sangbog (the best that a Sebastian can atm)
+#let sf(content) = text(spacing: 0.5em, tracking: 0.05em, weight: 375)[#content]
+#let sc(content) = smallcaps[#content]
+#let tt(content) = text(font: "Courier New")[#content]
+#let small(content) = text(size: 0.9em)[#content]
+#let em(content) = emph[#content]
