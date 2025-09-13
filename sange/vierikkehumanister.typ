@@ -1,7 +1,6 @@
 #import "//template.typ": *
 
-#sang("Vi er ikke humanister", subtext: [Jeanette Pinderup (TÅGEKAMMERT) 2007 - Mel: Vi er ikke
-rigtig voksne])[
+#sang("Vi er ikke humanister", subtext: [Jeanette Pinderup (TÅGEKAMMERT) 2007 - Mel: Vi er ikke rigtig voksne])[
   #omkvæd[
     _Vi er ikke humanister \
     Vi har ikke samfundsfag \

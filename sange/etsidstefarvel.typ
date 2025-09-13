@@ -1,6 +1,6 @@
 #import "//template.typ": *
 
-#sang("Et barn er født i Bethlehem", subtext: "Mel: Hvor smiler fager (den danske kyst?)", cols: 2)[
+#sang("Et sidste farvel", subtext: "Mel: Hvor smiler fager (den danske kyst?)", cols: 2)[
   #vers[
     Her skal der lyde et højt #sc[HURRA] \
     til alle jer der blev kandidater \

@@ -4,6 +4,9 @@
     title: "F-Klubbens Fabelagtige Sangbog"
 )
 
+#include "sange/julesange/julemadogdrikke.typ"
+
+#pagebreak()
 
 #include "sange/vierikkehumanister.typ"
 
@@ -23,6 +26,9 @@
 
 #include "sange/flagsang.typ"
 
+
+//#pagebreak()
+//#include "sange/enkortenlang.typ"
 /* #forside
 
 #forord
@@ -39,7 +45,6 @@
 
 #pagebreak()
 
-//#include "sange/enkortenlang.typ"
 
 #pagebreak()
 
