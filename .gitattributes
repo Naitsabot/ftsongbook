@@ -1,5 +1,6 @@
-*.otf linguist-vendored
-*.ttf linguist-vendored
-*.woff linguist-vendored
-*.woff2 linguist-vendored
-fonts/* linguist-vendored
+*.otf -linguist-detectable
+*.ttf -linguist-detectable
+*.woff -linguist-detectable
+*.woff2 -linguist-detectable
+fonts/* -linguist-detectable
+fonts/** -linguist-detectable
