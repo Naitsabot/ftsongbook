@@ -1,5 +1,4 @@
-*.otf linguist-detectable=false
-*.ttf linguist-detectable=false
-*.woff linguist-detectable=false
-*.woff2 linguist-detectable=false
+*.eps linguist-vendored
+*.ai linguist-vendored
+*.svg linguist-vendored
 fonts/** linguist-vendored
