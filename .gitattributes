@@ -1,6 +1,5 @@
-*.otf -linguist-detectable
-*.ttf -linguist-detectable
-*.woff -linguist-detectable
-*.woff2 -linguist-detectable
-fonts/* -linguist-detectable
-fonts/** -linguist-detectable
+*.otf linguist-detectable=false
+*.ttf linguist-detectable=false
+*.woff linguist-detectable=false
+*.woff2 linguist-detectable=false
+fonts/** linguist-vendored
