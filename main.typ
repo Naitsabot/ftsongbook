@@ -4,7 +4,7 @@
     title: "F-Klubbens Fabelagtige Sangbog"
 )
 
-#include "sange/julesange/julemadogdrikke.typ"
+#include "sange/unsorted/lanftfrahjemmeudenøl.typ"
 
 #pagebreak()
 
