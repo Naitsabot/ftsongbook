@@ -74,7 +74,7 @@
   ]
 
   #vers[
-    Damer: \
+    _Damer_: \
     :Store soldat \
     guvel guvel guvel: \
     og bom bummelum og bom bummelum \
