@@ -4,7 +4,7 @@
     title: "F-Klubbens Fabelagtige Sangbog"
 )
 
-#include "sange/unsorted/lanftfrahjemmeudenøl.typ"
+#include "sange/unsorted/lilleprinsesse.typ"
 
 #pagebreak()
 
